@@ -2,17 +2,20 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/python:3.6.1
-
-    working_directory: ~/
-
+      - image: circleci/python:3.7.0
     steps:
+      - checkout
       - run:
-          name: install dependencies
           command: |
-            pipenv install
-
+            python3 -m venv venv
+            . venv/bin/activate
+            pip install -r requirements.txt
       - run:
-          name: run tests
           command: |
-            pipenv run jupyter nbconvert --to html "main"
+            . venv/bin/activate
+            jupyter-nbconvert main.ipynb
+            mkdir -p res
+            mv main.html res/
+      - store_artifacts:
+          path: res/
+          destination: res/
