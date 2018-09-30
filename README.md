@@ -1,4 +1,5 @@
 ## Repeatable research
+[![CircleCI](https://circleci.com/gh/PhilSk/repeatable_research.svg?style=svg)](https://circleci.com/gh/PhilSk/repeatable_research)
 
 ### Requirements
 `pipenv` installed and in PATH
