@@ -1,0 +1,18 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/python:3.6.1
+
+    working_directory: ~/
+
+    steps:
+      - run:
+          name: install dependencies
+          command: |
+            pipenv install
+
+      - run:
+          name: run tests
+          command: |
+            pipenv run jupyter nbconvert --to html "main"
