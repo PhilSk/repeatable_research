@@ -15,6 +15,7 @@ USER root
 RUN chown -R ${NB_UID} ${HOME}
 USER ${NB_USER}
 
-RUN pip install --user -r home/philip/requirements.txt
+RUN cd home/philip
+RUN pip install --user -r requirements.txt
 
 CMD ["jupyter", "notebook", "--ip", "0.0.0.0"]
