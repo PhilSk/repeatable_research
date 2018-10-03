@@ -1,5 +1,4 @@
 FROM python:3.7-slim
-RUN pip install -r requirements.txt
 RUN pip install --no-cache-dir notebook==5.*
 
 ENV NB_USER philip
@@ -15,5 +14,7 @@ COPY . ${HOME}
 USER root
 RUN chown -R ${NB_UID} ${HOME}
 USER ${NB_USER}
+
+RUN pip install -r requirements.txt
 
 CMD ["jupyter", "notebook", "--ip", "0.0.0.0"]
