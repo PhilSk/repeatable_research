@@ -13,7 +13,13 @@ jobs:
       - run:
           command: |
             . venv/bin/activate
+            mkdir .kaggle
+            cd .kaggle
+            echo "{"username":\"${KAGGLE_USERNAME}\","key":\"${KAGGLE_KEY}\}" > kaggle.json
+            cd ..
+            kaggle competitions download titanic
             jupyter-nbconvert --execute main.ipynb
+            kaggle competitions submit titanic -f submission.csv -m "Test submission"
             mkdir -p res
             mv main.html res/
       - store_artifacts:

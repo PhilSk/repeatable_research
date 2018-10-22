@@ -3,3 +3,4 @@ sklearn==0.0
 matplotlib==2.2.3
 jupyter==1.0.0
 prompt-toolkit==2.0.4
+kaggle==1.4.7.1

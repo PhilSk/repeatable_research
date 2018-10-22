@@ -4,10 +4,13 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-numpy = "*"
-sklearn = "*"
-matplotlib = "*"
-jupyter = "*"
+numpy = "==1.15.1"
+sklearn = "==0.0"
+matplotlib = "==2.2.3"
+jupyter = "==1.0.0"
+pandas = "*"
+kaggle = "==1.4.7.1"
+prompt_toolkit = "==2.0.4"
 
 [dev-packages]
 
