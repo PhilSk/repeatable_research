@@ -21,7 +21,7 @@ jobs:
             jupyter-nbconvert --execute Titanic.ipynb
             kaggle competitions submit titanic -f submission.csv -m "Test submission"
             mkdir -p res
-            mv main.html res/
+            mv Titanic.html res/
       - store_artifacts:
           path: res/
           destination: res/
